@@ -4,31 +4,30 @@
 using namespace std;
 
 class HashLin {
-    ////// @PrivateFunctions ///////
+    private:
+    ///// Private Variables ////////
     
+    int hashTableSize;
+    int itemsInHashTable = 0;
+    vector<string> hashTable;
+
+
+    ////// Private Functions ///////
     ////Initialization///
     void init();
 
     ///// Linear Hashing Function ///// 
-    int linHash();
+    int linHash(string hashTarget);
 
     /// @brief Is Prime?
     /// @param n
     /// @return True or False for "is n prime?"
     bool isPrime(int n);
 
-    /// @brief Next prime
-    /// @param n 
-    /// @return Closest larger prime
-    int nextPrime(int n);
 
-/*
-    /// @brief Count size
-    /// @param target 
-    /// @return Char in string
-    int countSize(string target);
-*/
+
     public:
+    ///// PUBLIC FUNCTIONS //////
     /// @Constructor ////
     /// @param size /////
     HashLin(int size);
@@ -39,6 +38,10 @@ class HashLin {
     //// PRINT ////
     void print();
     
+    /// @brief Next prime
+    /// @param n 
+    /// @return Closest larger prime
+    int nextPrime(int n);
 
     
 };
