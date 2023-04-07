@@ -8,7 +8,7 @@ class HashLin {
     ///// Private Variables ////////
     
     int hashTableSize;
-    int itemsInHashTable = 0;
+    int itemsInHashTable;
     vector<string> hashTable;
 
 
@@ -33,7 +33,7 @@ class HashLin {
     HashLin(int size);
 
     ///// INSERT /////
-    void insert(string input);
+    void insertString(string input);
    
     //// PRINT ////
     void print();

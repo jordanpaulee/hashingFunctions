@@ -9,15 +9,20 @@ using namespace std;
 
 //// Initialization
 void HashLin::init() {
-    //resize here?
-    /* 
-    if (itemsInHashTable == hashTableSize){
-        hashTableSize = nextPrime(hashTableSize);
-        hashTable.resize(hashTableSize);
-    }*/
-    for(int i=0; i<hashTableSize; i++){
-        hashTable[i] = "";
+     cout << "6" << endl;
+    this->itemsInHashTable = 0;
+
+    cout << "7" << endl;
+    
+    for(int i=0; i<hashTableSize; i++){ ////////ISSUE HERE
+        cout <<"Test:" << i << endl;
+        cout << hashTableSize << endl;
+        
+        hashTable.vector::insert(hashTable.begin()+i ,"");  // Segmentation fault fixed
+        cout << "Segmentation fault fixed?" << endl;
     }
+
+    cout << "8" << endl;
 }
 
 
@@ -55,32 +60,62 @@ bool HashLin::isPrime(int n){
 //// Constructor
 HashLin::HashLin(int size) {
     
+    cout << "1" << endl;
     int newSize = nextPrime(size);
-
+    
+    cout << "3" << endl;
     this -> hashTableSize = newSize;
-    init();
+    cout << "4" << endl;
+    init(); // ISSUE HERE
+    cout << "5" << endl;
 };
 
 
 ///// Insertion Method
-void HashLin::insert(string input){ ////////////////// CURRENT TODO
+void HashLin::insertString(string input){ 
     
-    //Check if resize is needed?
+    // Check if resize is needed
     if (itemsInHashTable == hashTableSize){
         int tempSize = nextPrime(hashTableSize);
-        //hashTable.resize(hashTableSize);
+        
+        cout << "Resize?" << endl;
+        
         HashLin newTable(tempSize);
-        for (int i = 0; i < hashTableSize; i++){
+
+        for (int i = 0; i < hashTableSize; i++){ //POSSIBLE ISSUE #1
             if (this->hashTable[i]!= ""){
-                //THIS IS WHERE LINEAR PROBING COMES INTO PLAY
-                int newHash = newTable.linHash(input);
-                newTable.hashTable[newHash] = input;
+                newTable.insertString(input);
+                }
             }
+        
+        //hashTable.resize(tempSize); //redundant?
+        this->hashTable = newTable.hashTable;
+        this->hashTableSize = newTable.hashTableSize;
+        this->itemsInHashTable = newTable.itemsInHashTable;
         }
-        /*int newHash = linHash(input);
-        newTable.hashTable[newHash] = input;*/
-    }
     
+    // Otherwise, hash and insert with linear probing
+    int hashValue = linHash(input);
+
+    cout << "Hash Value: "<< hashValue << endl;
+    cout << hashTable[hashValue] << endl;
+
+    if (hashTable[hashValue] != ""){
+        while(hashTable[hashValue] != ""){
+            hashValue++;
+            
+            cout << hashValue << endl;
+            hashValue = hashValue % hashTableSize;
+           
+            cout << hashValue << endl;
+            cout << "Kicked to new hash." << " New hash: " << hashValue << endl;
+        } //SHOULD PROVIDE VALID hashValue if this terminates
+    }
+
+    hashTable[hashValue] = input;
+    itemsInHashTable++;
+    cout << "New Hash?: " << hashValue << "  Value: " << hashTable[hashValue] << endl;
+
 };
 
 
@@ -91,6 +126,7 @@ void HashLin::print(){
 
 //// Next Prime
 int HashLin::nextPrime(int n) {
+    cout << "2" << endl;
     if (n <= 1)
     return 2;
 
