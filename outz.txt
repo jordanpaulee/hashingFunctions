@@ -1,0 +1,1078 @@
+
+Please enter strings to insert (one per line; end list with '!'):
+
+zanier
+zaniest
+zany
+zap
+zapped
+zapper
+zappers
+zapping
+zappy
+zaps
+zeal
+zealot
+zealotry
+zealots
+zealous
+zealously
+zealousness
+zebra
+zebras
+zeitgeist
+zenith
+zeniths
+zephyr
+zephyrs
+zeppelin
+zeppelins
+zero
+zeroed
+zeroes
+zeroing
+zeros
+zest
+zestful
+zestfully
+zigzag
+zigzagged
+zigzagging
+zigzags
+zilch
+zillion
+zillions
+zinc
+zine
+zines
+zing
+zinged
+zinger
+zingers
+zinging
+zings
+zingy
+zip
+zipped
+zipper
+zippers
+zipping
+zippy
+zips
+zit
+zither
+zithers
+zits
+zodiac
+zodiacal
+zodiacs
+zombie
+zombies
+zonal
+zonally
+zone
+zoned
+zones
+zoning
+zonked
+zoo
+zookeeper
+zookeepers
+zoological
+zoologist
+zoologists
+zoology
+zoom
+zoomed
+zooming
+zooms
+zoos
+zucchini
+zucchinis
+zydeco
+zygote
+zygotes
+!
+
+
+Hash Table with Linear Probing (size = 97): 
+
+  0: zombies
+  1: zoology
+  2: zanier
+  3: zestfully
+  4: zillions
+  5: zip
+  6: zapped
+  7: zipped
+  8: zippers
+  9: zit
+  10: zany
+  11: zither
+  12: zigzagging
+  13: zephyrs
+  14: zestful
+  15: zigzags
+  16: zebras
+  17: zonally
+  18: zipper
+  19: zones
+  20: zapper
+  21: zealous
+  22: zeitgeist
+  23: zits
+  24: zealousness
+  25: zookeeper
+  26: zoological
+  27: zoom
+  28: zoomed
+  29: zooming
+  30: zooms
+  31: zoo
+  32: zeroed
+  33: zaniest
+  34: zoos
+  35: zoologists
+  36: zucchini
+  37: zucchinis
+  38: zygote
+  39: zygotes
+  40: zest
+  41: zeros
+  42: zippy
+  43: zodiacal
+  44: zeniths
+  45: zeal
+  46: zithers
+  47: zeroes
+  48: zodiacs
+  49: zone
+  50: zonal
+  51: 
+  52: zeroing
+  53: zillion
+  54: 
+  55: zebra
+  56: zonked
+  57: 
+  58: zeppelins
+  59: zinging
+  60: zapping
+  61: zenith
+  62: zealot
+  63: zinged
+  64: zeppelin
+  65: zigzagged
+  66: zookeepers
+  67: zoologist
+  68: zings
+  69: zips
+  70: 
+  71: 
+  72: 
+  73: zydeco
+  74: zealotry
+  75: zinger
+  76: zinc
+  77: zingers
+  78: zaps
+  79: zappers
+  80: zealously
+  81: zealots
+  82: zilch
+  83: zappy
+  84: zine
+  85: zing
+  86: zingy
+  87: zipping
+  88: zodiac
+  89: zephyr
+  90: zigzag
+  91: zines
+  92: zombie
+  93: zoned
+  94: zoning
+  95: zero
+  96: zap
+
+
+
+Perfect Hash Table: 
+
+  0: --> 
+         0: 
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: zeroing
+         7: 
+         8: 
+         9: 
+         10: 
+         11: 
+         12: 
+         13: 
+         14: 
+         15: 
+         16: 
+         17: 
+         18: 
+         19: 
+         20: 
+         21: 
+         22: 
+         23: 
+         24: zippy
+         25: 
+         26: 
+         27: 
+         28: zinc
+         29: 
+         30: 
+         31: 
+         32: 
+         33: 
+         34: 
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: zany
+         43: 
+         44: 
+         45: 
+         46: zinging
+         47: 
+         48: 
+         49: 
+         50: 
+         51: 
+         52: 
+         53: 
+         54: zips
+         55: 
+         56: zipped
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: zombie
+         63: 
+  1: --> 
+         0: 
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: 
+         9: zephyrs
+         10: 
+         11: zooming
+         12: 
+         13: 
+         14: 
+         15: 
+         16: 
+         17: 
+         18: 
+         19: zoology
+         20: 
+         21: 
+         22: 
+         23: 
+         24: 
+         25: 
+         26: 
+         27: 
+         28: 
+         29: 
+         30: 
+         31: zealot
+         32: 
+         33: zoom
+         34: 
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: zodiacs
+         42: 
+         43: 
+         44: 
+         45: 
+         46: 
+         47: 
+         48: 
+         49: 
+         50: 
+         51: 
+         52: 
+         53: 
+         54: 
+         55: zeppelin
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: zigzags
+  2: --> 
+         0: 
+         1: 
+         2: zeppelins
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: 
+         9: 
+         10: 
+         11: 
+         12: zonal
+         13: 
+         14: 
+         15: 
+         16: 
+         17: 
+         18: 
+         19: 
+         20: 
+         21: 
+         22: 
+         23: 
+         24: 
+         25: 
+         26: 
+         27: 
+         28: 
+         29: 
+         30: 
+         31: 
+         32: zeal
+         33: zooms
+         34: 
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: zaniest
+         43: 
+         44: 
+         45: 
+         46: 
+         47: 
+         48: 
+         49: 
+         50: 
+         51: 
+         52: zoned
+         53: 
+         54: 
+         55: 
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: zealots
+         63: 
+         64: 
+         65: 
+         66: 
+         67: 
+         68: 
+         69: 
+         70: 
+         71: 
+         72: zapped
+         73: zebra
+         74: 
+         75: 
+         76: 
+         77: 
+         78: 
+         79: 
+         80: 
+         81: 
+         82: zine
+         83: 
+         84: 
+         85: 
+         86: 
+         87: 
+         88: 
+         89: 
+         90: 
+         91: 
+         92: 
+         93: 
+         94: 
+         95: 
+         96: 
+         97: 
+         98: 
+         99: 
+  3: --> 
+         0: 
+         1: zings
+         2: 
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: 
+         9: 
+         10: 
+         11: 
+         12: 
+         13: zeroed
+         14: 
+         15: 
+         16: 
+         17: 
+         18: 
+         19: 
+         20: 
+         21: zippers
+         22: 
+         23: 
+         24: 
+         25: 
+         26: 
+         27: 
+         28: zeros
+         29: 
+         30: 
+         31: 
+         32: 
+         33: 
+         34: 
+         35: 
+         36: 
+         37: zucchini
+         38: 
+         39: 
+         40: 
+         41: 
+         42: 
+         43: 
+         44: 
+         45: 
+         46: 
+         47: 
+         48: 
+         49: 
+         50: zestful
+         51: 
+         52: 
+         53: 
+         54: 
+         55: 
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: 
+         64: 
+         65: 
+         66: 
+         67: 
+         68: 
+         69: 
+         70: 
+         71: 
+         72: 
+         73: 
+         74: 
+         75: 
+         76: 
+         77: 
+         78: 
+         79: 
+         80: 
+         81: 
+         82: zapping
+         83: 
+         84: 
+         85: 
+         86: 
+         87: 
+         88: 
+         89: 
+         90: 
+         91: 
+         92: 
+         93: 
+         94: 
+         95: 
+         96: 
+         97: 
+         98: 
+         99: 
+         100: 
+         101: 
+         102: 
+         103: zinged
+         104: zoning
+         105: 
+         106: 
+         107: 
+         108: 
+         109: 
+         110: zoological
+         111: 
+         112: 
+         113: 
+         114: 
+         115: zithers
+         116: 
+         117: 
+         118: 
+         119: 
+         120: 
+  4: --> 
+         0: zillions
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: zipper
+         7: 
+         8: 
+         9: 
+         10: 
+         11: 
+         12: zeitgeist
+         13: 
+         14: 
+         15: 
+         16: 
+         17: 
+         18: zestfully
+         19: 
+         20: 
+         21: 
+         22: 
+         23: 
+         24: zero
+         25: 
+         26: 
+         27: 
+         28: 
+         29: 
+         30: 
+         31: 
+         32: zing
+         33: 
+         34: 
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: zingers
+         43: 
+         44: 
+         45: 
+         46: 
+         47: 
+         48: 
+         49: 
+         50: zither
+         51: 
+         52: 
+         53: 
+         54: 
+         55: 
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: 
+  5: --> 
+         0: zonked
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: 
+         9: 
+         10: zigzagging
+         11: 
+         12: 
+         13: 
+         14: 
+         15: zip
+         16: zombies
+         17: 
+         18: 
+         19: 
+         20: zonally
+         21: 
+         22: 
+         23: 
+         24: 
+  6: --> 
+         0: 
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: zoomed
+         7: 
+         8: 
+         9: 
+         10: zenith
+         11: 
+         12: 
+         13: 
+         14: 
+         15: 
+         16: 
+         17: 
+         18: 
+         19: 
+         20: zoo
+         21: 
+         22: 
+         23: 
+         24: 
+         25: 
+         26: 
+         27: 
+         28: 
+         29: 
+         30: zoologist
+         31: 
+         32: 
+         33: 
+         34: zilch
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: 
+         43: 
+         44: zookeeper
+         45: 
+         46: zapper
+         47: 
+         48: 
+         49: 
+         50: 
+         51: 
+         52: 
+         53: 
+         54: 
+         55: 
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: 
+         64: 
+         65: 
+         66: 
+         67: 
+         68: 
+         69: 
+         70: 
+         71: 
+         72: 
+         73: 
+         74: 
+         75: 
+         76: 
+         77: 
+         78: 
+         79: 
+         80: 
+         81: 
+         82: 
+         83: 
+         84: zone
+         85: 
+         86: 
+         87: 
+         88: 
+         89: 
+         90: 
+         91: 
+         92: 
+         93: 
+         94: 
+         95: 
+         96: zappy
+         97: 
+         98: 
+         99: 
+         100: 
+         101: 
+         102: 
+         103: 
+         104: 
+         105: 
+         106: 
+         107: 
+         108: 
+         109: 
+         110: 
+         111: 
+         112: zucchinis
+         113: 
+         114: 
+         115: 
+         116: 
+         117: 
+         118: 
+         119: 
+         120: 
+         121: 
+         122: 
+         123: 
+         124: 
+         125: 
+         126: 
+         127: 
+         128: 
+         129: 
+         130: zest
+         131: 
+         132: 
+         133: 
+         134: zygote
+         135: 
+         136: 
+         137: 
+         138: 
+         139: 
+         140: 
+         141: 
+         142: 
+         143: 
+  7: --> 
+         0: 
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: 
+         7: zookeepers
+         8: 
+         9: 
+         10: 
+         11: 
+         12: 
+         13: 
+         14: 
+         15: 
+         16: 
+         17: zygotes
+         18: 
+         19: 
+         20: 
+         21: 
+         22: 
+         23: 
+         24: 
+         25: 
+         26: 
+         27: 
+         28: 
+         29: 
+         30: 
+         31: 
+         32: 
+         33: 
+         34: 
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: 
+         43: 
+         44: 
+         45: 
+         46: 
+         47: zinger
+         48: zoos
+         49: 
+         50: 
+         51: 
+         52: 
+         53: 
+         54: 
+         55: 
+         56: 
+         57: zillion
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: 
+         64: 
+         65: 
+         66: 
+         67: zones
+         68: 
+         69: 
+         70: 
+         71: 
+         72: 
+         73: 
+         74: 
+         75: 
+         76: 
+         77: zoologists
+         78: 
+         79: 
+         80: 
+         81: 
+         82: 
+         83: 
+         84: 
+         85: 
+         86: 
+         87: 
+         88: 
+         89: 
+         90: 
+         91: 
+         92: 
+         93: 
+         94: 
+         95: 
+         96: 
+         97: zanier
+         98: zappers
+         99: zeniths
+  8: --> 
+         0: 
+         1: 
+         2: zits
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: 
+         9: 
+         10: 
+         11: 
+         12: 
+         13: 
+         14: 
+         15: zealously
+         16: zigzagged
+         17: 
+         18: 
+         19: 
+         20: 
+         21: 
+         22: 
+         23: 
+         24: 
+         25: 
+         26: 
+         27: 
+         28: zeroes
+         29: 
+         30: 
+         31: 
+         32: 
+         33: 
+         34: zaps
+         35: zigzag
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: 
+         43: 
+         44: 
+         45: 
+         46: 
+         47: 
+         48: 
+         49: 
+         50: 
+         51: 
+         52: 
+         53: 
+         54: zydeco
+         55: 
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: 
+         64: 
+         65: 
+         66: 
+         67: 
+         68: 
+         69: 
+         70: 
+         71: 
+         72: 
+         73: 
+         74: 
+         75: 
+         76: 
+         77: 
+         78: 
+         79: zodiac
+         80: 
+         81: 
+         82: 
+         83: 
+         84: 
+         85: 
+         86: 
+         87: 
+         88: 
+         89: 
+         90: 
+         91: 
+         92: 
+         93: 
+         94: 
+         95: zealousness
+         96: 
+         97: 
+         98: 
+         99: 
+         100: 
+         101: 
+         102: 
+         103: 
+         104: 
+         105: 
+         106: 
+         107: 
+         108: 
+         109: zephyr
+         110: 
+         111: 
+         112: 
+         113: 
+         114: 
+         115: zealotry
+         116: 
+         117: 
+         118: 
+         119: 
+         120: 
+  9: --> 
+         0: 
+         1: 
+         2: 
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: 
+         9: zines
+         10: 
+         11: zebras
+         12: zit
+         13: 
+         14: 
+         15: 
+         16: 
+         17: 
+         18: 
+         19: zealous
+         20: 
+         21: zipping
+         22: 
+         23: 
+         24: 
+         25: zingy
+         26: 
+         27: 
+         28: 
+         29: 
+         30: 
+         31: zap
+         32: 
+         33: 
+         34: 
+         35: 
+         36: 
+         37: 
+         38: 
+         39: 
+         40: 
+         41: 
+         42: 
+         43: 
+         44: 
+         45: 
+         46: 
+         47: 
+         48: 
+         49: 
+         50: 
+         51: 
+         52: 
+         53: 
+         54: 
+         55: 
+         56: 
+         57: 
+         58: 
+         59: 
+         60: 
+         61: 
+         62: 
+         63: zodiacal

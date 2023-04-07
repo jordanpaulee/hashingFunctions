@@ -1,0 +1,82 @@
+
+Please enter strings to insert (one per line; end list with '!'):
+
+bubble
+swanky
+remain
+annoyed
+uttermost
+quixotic
+interest
+excellent
+popcorn
+impolite
+off
+sharp
+scattered
+veil
+learn
+!
+
+
+Hash Table with Linear Probing (size = 17): 
+
+  0: interest
+  1: quixotic
+  2: swanky
+  3: annoyed
+  4: remain
+  5: sharp
+  6: scattered
+  7: uttermost
+  8: impolite
+  9: 
+  10: excellent
+  11: 
+  12: popcorn
+  13: off
+  14: bubble
+  15: veil
+  16: learn
+
+
+
+Perfect Hash Table: 
+
+  0: --> 
+         0: 
+         1: 
+         2: interest
+         3: sharp
+  1: --> 
+         0: popcorn
+  2: --> 
+         0: 
+         1: 
+         2: annoyed
+         3: learn
+  3: --> 
+         0: impolite
+  4: --> 
+         0: remain
+  5: --> 
+         0: 
+         1: swanky
+         2: 
+         3: off
+  6: --> 
+         0: veil
+         1: excellent
+         2: 
+         3: 
+         4: 
+         5: 
+         6: 
+         7: 
+         8: bubble
+  7: --> 
+         0: uttermost
+  8: --> 
+         0: quixotic
+  9: --> 
+         0: scattered

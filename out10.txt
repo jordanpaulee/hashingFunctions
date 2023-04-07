@@ -1,0 +1,58 @@
+
+Please enter strings to insert (one per line; end list with '!'):
+
+hello
+street
+leaves
+fall
+Thanksgiving
+candy
+pumpkin
+pie
+Halloween
+fun
+!
+
+
+Hash Table with Linear Probing (size = 11): 
+
+  0: pumpkin
+  1: fun
+  2: 
+  3: pie
+  4: Halloween
+  5: hello
+  6: street
+  7: leaves
+  8: fall
+  9: Thanksgiving
+  10: candy
+
+
+
+Perfect Hash Table: 
+
+  0: --> 
+         0: pumpkin
+  1: --> 
+         0: 
+         1: Thanksgiving
+         2: 
+         3: candy
+  2: --> 
+         0: leaves
+  3: --> 
+         0: fall
+  4: --> 
+         0: pie
+  5: --> 
+         0: Halloween
+         1: 
+         2: 
+         3: street
+  6: --> 
+         0: hello
+  7: --> 
+         0: fun
+  8: --> 
+  9: --> 

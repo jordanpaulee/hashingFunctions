@@ -1,0 +1,54 @@
+
+Please enter strings to insert (one per line; end list with '!'):
+
+the
+quick
+brown
+fox
+jumped
+over
+a
+lazy
+dog
+!
+
+
+Hash Table with Linear Probing (size = 11): 
+
+  0: quick
+  1: lazy
+  2: dog
+  3: 
+  4: 
+  5: jumped
+  6: over
+  7: fox
+  8: the
+  9: brown
+  10: a
+
+
+
+Perfect Hash Table: 
+
+  0: --> 
+         0: dog
+  1: --> 
+         0: jumped
+  2: --> 
+         0: brown
+         1: lazy
+         2: 
+         3: 
+  3: --> 
+         0: the
+  4: --> 
+  5: --> 
+         0: fox
+  6: --> 
+         0: over
+  7: --> 
+         0: a
+  8: --> 
+  9: --> 
+         0: quick
