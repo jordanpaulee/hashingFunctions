@@ -12,14 +12,14 @@ void HashLin::init() {
      cout << "4: init() called" << endl;
     this->itemsInHashTable = 0;
 
-    cout << "5: Items in hash table: " << this->itemsInHashTable << endl;
+    //cout << "5: Items in hash table: " << this->itemsInHashTable << endl;
     
     for(int i=0; i<hashTableSize; i++){
-        cout << "6: Loop Count: " << i << endl;
-        cout << "7: Hash Table Size: " << hashTableSize << endl;
+        //cout << "6: Loop Count: " << i << endl;
+        //cout << "7: Hash Table Size: " << hashTableSize << endl;
         
         hashTable.vector::insert(hashTable.begin()+i ,"");
-        cout << "Test: " << hashTable[i] << endl;
+        //cout << "Test: " << hashTable[i] << endl;
     }
 
     cout << "8: End init()" << endl;
@@ -82,20 +82,27 @@ void HashLin::insertString(string input){
     // Check if resize is needed
     if (itemsInHashTable == hashTableSize){
         
-        cout << "Resize" << endl;
-        int tempSize = nextPrime(hashTableSize); // Could just call hashTableSize++ to bump it to the next instead of function call
+        cout << endl << "//////RESIZE////////" << endl;
+        int tempSize = nextPrime(hashTableSize); 
         
+
         HashLin newTable(tempSize);
 
         cout << "Hashing old values into new table" << endl;
         for (int i = 0; i < hashTableSize; i++){ //POSSIBLE ISSUE #1
             /*
-            For the entirety of the previous hash table, read in values and rehash them
+            Check doesn't completely match out9.txt because "brown" is read from previous hash table before "the"
+            - Ask prof.
             */
+
             if (this->hashTable[i]!= ""){
                 newTable.insertString(this -> hashTable[i]);
                 }
             }
+            
+        //ALTERNATE REHASHING
+
+
         cout << "Finished rehashing old values into new table, reassigning old table pointers to new" << endl;
         
         this->hashTable = newTable.hashTable;
@@ -133,6 +140,9 @@ void HashLin::insertString(string input){
 
 //// Print
 void HashLin::print(){
+    for (int i = 0; i < hashTableSize; i++) {
+        cout << i << ": " << hashTable[i] << endl;
+    }
 };
 
 
