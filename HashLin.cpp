@@ -9,20 +9,20 @@ using namespace std;
 
 //// Initialization
 void HashLin::init() {
-     cout << "6" << endl;
+     cout << "4: init() called" << endl;
     this->itemsInHashTable = 0;
 
-    cout << "7" << endl;
+    cout << "5: Items in hash table: " << this->itemsInHashTable << endl;
     
-    for(int i=0; i<hashTableSize; i++){ ////////ISSUE HERE
-        cout <<"Test:" << i << endl;
-        cout << hashTableSize << endl;
+    for(int i=0; i<hashTableSize; i++){
+        cout << "6: Loop Count: " << i << endl;
+        cout << "7: Hash Table Size: " << hashTableSize << endl;
         
-        hashTable.vector::insert(hashTable.begin()+i ,"");  // Segmentation fault fixed
-        cout << "Segmentation fault fixed?" << endl;
+        hashTable.vector::insert(hashTable.begin()+i ,"");
+        cout << "Test: " << hashTable[i] << endl;
     }
 
-    cout << "8" << endl;
+    cout << "8: End init()" << endl;
 }
 
 
@@ -59,63 +59,75 @@ bool HashLin::isPrime(int n){
 
 //// Constructor
 HashLin::HashLin(int size) {
+    cout << endl << "/////////CONSTRUCTOR///////////" << endl;
+    cout << "1: Constructor Call" << endl;
     
-    cout << "1" << endl;
     int newSize = nextPrime(size);
+    cout << "Next Prime: " << newSize << endl;
     
-    cout << "3" << endl;
     this -> hashTableSize = newSize;
-    cout << "4" << endl;
-    init(); // ISSUE HERE
-    cout << "5" << endl;
+    cout << "3: CHECK. New Size: " << newSize << " | Hash Table Size: " << this -> hashTableSize << endl;
+   
+    init();
+    cout << endl << endl;
 };
 
 
 ///// Insertion Method
 void HashLin::insertString(string input){ 
-    
+    cout << "/////////STRING INSERT/////////" << endl;
+    cout << "Items in hash table: " << itemsInHashTable << endl;
+    cout << "Hash Table Size: " << hashTableSize << endl;
+
     // Check if resize is needed
     if (itemsInHashTable == hashTableSize){
-        int tempSize = nextPrime(hashTableSize);
         
-        cout << "Resize?" << endl;
+        cout << "Resize" << endl;
+        int tempSize = nextPrime(hashTableSize); // Could just call hashTableSize++ to bump it to the next instead of function call
         
         HashLin newTable(tempSize);
 
+        cout << "Hashing old values into new table" << endl;
         for (int i = 0; i < hashTableSize; i++){ //POSSIBLE ISSUE #1
+            /*
+            For the entirety of the previous hash table, read in values and rehash them
+            */
             if (this->hashTable[i]!= ""){
-                newTable.insertString(input);
+                newTable.insertString(this -> hashTable[i]);
                 }
             }
+        cout << "Finished rehashing old values into new table, reassigning old table pointers to new" << endl;
         
-        //hashTable.resize(tempSize); //redundant?
         this->hashTable = newTable.hashTable;
         this->hashTableSize = newTable.hashTableSize;
         this->itemsInHashTable = newTable.itemsInHashTable;
+        cout << endl << endl;
+        //Continue to insert new value
         }
     
     // Otherwise, hash and insert with linear probing
     int hashValue = linHash(input);
 
     cout << "Hash Value: "<< hashValue << endl;
-    cout << hashTable[hashValue] << endl;
+    cout << "Value: " << hashTable[hashValue] << endl;
 
     if (hashTable[hashValue] != ""){
+        cout << "Linear probing condition called" << endl;
+        
         while(hashTable[hashValue] != ""){
             hashValue++;
             
-            cout << hashValue << endl;
             hashValue = hashValue % hashTableSize;
            
-            cout << hashValue << endl;
-            cout << "Kicked to new hash." << " New hash: " << hashValue << endl;
+            cout << "New hash value: " << hashValue << endl;
+            
         } //SHOULD PROVIDE VALID hashValue if this terminates
     }
 
     hashTable[hashValue] = input;
     itemsInHashTable++;
-    cout << "New Hash?: " << hashValue << "  Value: " << hashTable[hashValue] << endl;
-
+    cout << "Hash Index: " << hashValue << "  Value: " << hashTable[hashValue] << endl;
+    cout << endl << endl;
 };
 
 
@@ -126,7 +138,8 @@ void HashLin::print(){
 
 //// Next Prime
 int HashLin::nextPrime(int n) {
-    cout << "2" << endl;
+    cout << "2: Next Prime Call" << endl;
+    
     if (n <= 1)
     return 2;
 

@@ -16,6 +16,12 @@ int main() {
     foo.insertString("the");
     foo.insertString("quick");
     foo.insertString("brown");
+    foo.insertString("fox");
+    foo.insertString("jumped");
+    foo.insertString("over");
+    foo.insertString("a");
+    foo.insertString("lazy");
+    foo.insertString("dog");
 }
 
 
