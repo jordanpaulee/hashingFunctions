@@ -10,45 +10,35 @@ class HashPerfect {
     
 
     private:
-    /*
-    array hash table
-        - 10 pointers pointing to hashLin objects
-
-    */
+    /// @brief Hash Table Array for storing pointers to Linear Hash tables
     HashLin * hashTableArray[10];
-    /*
-
-    init method
-        - Initializes all members in the table to null
-     */
+    
+    
+    /// @brief init() used to initialize all values in hashTableArray to nullptrs
     void init();
-    /*   
-    hash function
-    */
-    int perfectHash(string hashTarget);
+    
 
+    /// @brief Perfect Hash method for determining postion in hash table array (Does not control linHash objects)
+    /// @param hashTarget 
+    /// @return Hash value for given string
+    int perfectHash(string hashTarget);
 
 
     public:
 
-    /* 
-    constuctor that calls init
-    */
+    /// @brief Constructor that calls init()
     HashPerfect();
-    /*
 
-    insert method
+
+    /*  insert method
         - Takes entire vector of strings as a param
         - Determines number of strings that hash to each location
         - Dynamically allocates memory to each location
-        - Inserts all of the strings into the secondary hash tables
-
-    */
+        - Inserts all of the strings into the secondary hash tables  */
     void insertStringPerfect(string input);
-    /*
-    print method
-        - Print out elements in the table and the secondary tables
-    */
+    
+    
+    /// @brief Print method to output perfect hash
     void printPerfect(); 
 };
 

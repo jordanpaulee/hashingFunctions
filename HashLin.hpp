@@ -35,6 +35,7 @@ class HashLin {
     HashLin(int size);
 
     ///// INSERT /////
+    //Takes input string and handles resizing and hashing of input value into linear hash table
     void insertString(string input);
    
     //// PRINT ////
