@@ -12,7 +12,7 @@ using namespace std;
 HashLin foo(0);
 
 int main() {
-  /*
+  
     foo.insertString("the");
     foo.insertString("quick");
     foo.insertString("brown");
@@ -23,7 +23,7 @@ int main() {
     foo.insertString("lazy");
     foo.insertString("dog");
     foo.print();
-    */
+    
 /*
 hello
 street
@@ -36,6 +36,7 @@ pie
 Halloween
 fun
 */
+/*
     foo.insertString("hello");
     foo.insertString("street");
     foo.insertString("leaves");
@@ -46,7 +47,7 @@ fun
     foo.insertString("pie");
     foo.insertString("Halloween");
     foo.insertString("fun");
-    foo.print();
+    foo.print();*/
 }
 
 

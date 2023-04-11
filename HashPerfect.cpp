@@ -45,5 +45,11 @@ void HashPerfect::insertStringPerfect(string input) {
 
 //TODO Implement
 void HashPerfect::printPerfect() {
-    //TODO
+    for (int i = 0 ; i < 10; i++) {
+        cout << i << ": -->" << endl;
+        cout << "       ";
+        //TODO
+        //- for the size of the hash table located at the pointer array in index i, 
+        //  iterate through and print in a list order, even the empty values.
+    }
 }
