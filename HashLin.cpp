@@ -76,6 +76,7 @@ HashLin::HashLin(int size) {
 ///// Insertion Method
 void HashLin::insertString(string input){ 
     cout << "/////////STRING INSERT/////////" << endl;
+    cout << "Item to insert: " << input << endl;
     cout << "Items in hash table: " << itemsInHashTable << endl;
     cout << "Hash Table Size: " << hashTableSize << endl;
 
@@ -83,10 +84,9 @@ void HashLin::insertString(string input){
     if (itemsInHashTable == hashTableSize){
         
         cout << endl << "//////RESIZE////////" << endl;
-        int tempSize = nextPrime(hashTableSize); 
+        //int tempSize = nextPrime(hashTableSize); //Not hitting 3. Redundant?
         
-
-        HashLin newTable(tempSize);
+        HashLin newTable(hashTableSize);
 
         cout << "Hashing old values into new table" << endl;
         for (int i = 0; i < hashTableSize; i++){ //POSSIBLE ISSUE #1
