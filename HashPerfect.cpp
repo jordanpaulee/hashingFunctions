@@ -32,23 +32,40 @@ HashPerfect::HashPerfect() {
 
 
 void HashPerfect::insertStringPerfect(vector<string> strings) {
-    //ALL WRONG
-    /*int index = perfectHash(input);
-    cout << "Perfect Hash: " << index << endl;
+    cout << strings.size() << endl;
 
-    if(hashTableArray[index] == nullptr) {
-        cout << "here";
-        hashTableArray[index] = new HashLin(1); //SEGMENTATION FAULT HERE
-        hashTableArray[index]->insertString(input);
-        cout << "TEST 1234" << endl;
+    for(int i = 0; i < strings.size(); i++) {
+        int index = perfectHash(strings[i]);
 
+        if(hashTableArray[index] == nullptr) { //Insert initial string
+            cout << "here";
+
+            hashTableArray[index] = new HashLin(1);
+            hashTableArray[index]->insertString(strings[i]);
+            cout << "TEST 1234" << endl;
+        }
+
+        else { //DOUBLE SIZE AND REHASH!!!
+            cout << "HERE!!!!!!" << endl;
+            
+            int temp = hashTableArray[index]->getSize();
+            
+            int newSize = 0;
+            if(temp == 1) {
+                newSize = 4;
+            }
+            else{ 
+                newSize = (temp*temp);
+            }
+            
+            cout << newSize << endl;
+            //TODO: RESIZE FUNCTION
+            hashTableArray[index]->resizePerfect(newSize);
+
+            hashTableArray[index]->insertString(strings[i]); // ISSUE
+        }
+        cout << "////////////////////" << i << "////////////////////////" << endl;
     }
-    
-    else {
-        hashTableArray[index]->insertString(input); // TODO: Check if this is correct data handling
-    }*/
-
-    
 }
 
 //TODO Implement
@@ -57,10 +74,5 @@ void HashPerfect::printPerfect() {
     for (int i = 0 ; i < 10; i++) {
         cout << i << ": -->" << endl;
         hashTableArray[i]->printIndent();
-        /*ISSUES:
-            - hash lin needs to resize after insert? 
-            - Seems that once two items are in the table, it needs to be resized to 4?
-            - Print statement makes no sense on answer key.
-        */
     }
 }

@@ -39,7 +39,7 @@ int HashLin::linHash(string hashTarget) {
 
 
 //// Prime Checker
-/*
+
 bool HashLin::isPrime(int n){
     if (n <= 1) return false;
     if (n <= 3) return true;
@@ -51,7 +51,7 @@ bool HashLin::isPrime(int n){
         return false;
 
     return true;
-}*/
+}
 
 
 ///////PUBLIC////////
@@ -84,7 +84,8 @@ void HashLin::insertString(string input){
         
         cout << endl << "//////RESIZE////////" << endl;
         
-        HashLin newTable(hashTableSize);
+        int newSize = nextPrime(hashTableSize);
+        HashLin newTable(newSize);
 
         cout << "Hashing old values into new table" << endl;
         for (int i = 0; i < hashTableSize; i++){ 
@@ -141,14 +142,16 @@ void HashLin::print(){
 
 // Print Indent
 void HashLin::printIndent(){
-    for (int i = 0; i < hashTableSize; i++) {
-        cout << "       " << i << ": " << hashTable[i] << endl;
+    if (this != nullptr) {
+        for (int i = 0; i < hashTableSize; i++) {
+            cout << "       " << i << ": " << hashTable[i] << endl;
+        }
     }
 };
 
 
 //// Next Prime
-/*
+
 int HashLin::nextPrime(int n) {
     cout << "2: Next Prime Call" << endl;
     
@@ -166,8 +169,24 @@ int HashLin::nextPrime(int n) {
         }
     }
     return n;
-}*/
+}
 
     int HashLin::getSize()  {
         return hashTableSize;
+    }
+
+    void HashLin::resizePerfect(int n){
+        HashLin newTable(n);
+
+        cout << "Hashing old values into new table" << endl;
+        for (int i = 0; i < hashTableSize; i++){ 
+
+            if (this->hashTable[i]!= ""){
+                newTable.insertString(this -> hashTable[i]);
+                }
+            }
+
+        this->hashTable = newTable.hashTable;
+        this->hashTableSize = newTable.hashTableSize;
+        this->itemsInHashTable = newTable.itemsInHashTable;
     }

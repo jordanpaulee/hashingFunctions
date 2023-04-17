@@ -26,7 +26,7 @@ class HashLin {
     /// @brief Is Prime?
     /// @param n
     /// @return True or False for "is n prime?"
-    //bool isPrime(int n);
+    bool isPrime(int n);
 
     
 
@@ -51,11 +51,15 @@ class HashLin {
     /// @brief Next prime
     /// @param n 
     /// @return Closest larger prime
-    //int nextPrime(int n);
+    int nextPrime(int n);
 
     /// @brief Getter for array size
     /// @return hashTableSize
     int getSize();
+
+    /// @brief for resizing hashlin objects for perfect hashing
+    /// @param n for resize int
+    void resizePerfect(int n);
 
     
 };

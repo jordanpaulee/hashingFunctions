@@ -52,24 +52,28 @@ HashLin test(newSize);
 HashPerfect testPerfect;
 
 int main() {
+
+    cout << sizeof(testArray10) << endl;
+    cout << sizeof(testArray10[0]) << endl;
     cout << stringSize << endl;
+    
+    // FILL VECTOR 
     for (int k = 0; k < 10; k++){
         testVector10.push_back(testArray10[k]);
     }
-
-    //better implementation seems to be to read in the values into and array and then hash
-    //Matches output better for 9 and 10
+    
+    //FILL HASH LIN ARRAY
     for (int i = 0; i < stringSize; i++){
         test.insertString(testArray10[i]);
     }
+    //PRINT HASHLIN
     test.print();
     cout << endl << endl;
-
-    for (int j = 0; j < stringSize; j++){
-        //cout << "test1" << endl;
-        testPerfect.insertStringPerfect(testVector10);
-        //cout << "test2" << endl;
-    }
+    
+    //FILL HASHPERFECT
+    testPerfect.insertStringPerfect(testVector10);
+    
+    //PRINT HASHPERFECT
     testPerfect.printPerfect();
 
 }
