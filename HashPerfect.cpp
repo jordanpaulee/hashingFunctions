@@ -27,29 +27,40 @@ int HashPerfect::perfectHash(string hashTarget) {
 
 
 HashPerfect::HashPerfect() {
-    this->init();
+    init();
 }
 
 
-void HashPerfect::insertStringPerfect(string input) {
-    int index = perfectHash(input);
+void HashPerfect::insertStringPerfect(vector<string> strings) {
+    //ALL WRONG
+    /*int index = perfectHash(input);
+    cout << "Perfect Hash: " << index << endl;
 
     if(hashTableArray[index] == nullptr) {
-        *hashTableArray[index] = HashLin(1); // TODO: Check if this pointer syntax actually works
+        cout << "here";
+        hashTableArray[index] = new HashLin(1); //SEGMENTATION FAULT HERE
+        hashTableArray[index]->insertString(input);
+        cout << "TEST 1234" << endl;
+
     }
     
     else {
         hashTableArray[index]->insertString(input); // TODO: Check if this is correct data handling
-    }
+    }*/
+
+    
 }
 
 //TODO Implement
 void HashPerfect::printPerfect() {
+    cout << "//////// PRINTING ////////////" << endl;
     for (int i = 0 ; i < 10; i++) {
         cout << i << ": -->" << endl;
-        cout << "       ";
-        //TODO
-        //- for the size of the hash table located at the pointer array in index i, 
-        //  iterate through and print in a list order, even the empty values.
+        hashTableArray[i]->printIndent();
+        /*ISSUES:
+            - hash lin needs to resize after insert? 
+            - Seems that once two items are in the table, it needs to be resized to 4?
+            - Print statement makes no sense on answer key.
+        */
     }
 }

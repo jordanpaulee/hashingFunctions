@@ -11,7 +11,7 @@ class HashPerfect {
 
     private:
     /// @brief Hash Table Array for storing pointers to Linear Hash tables
-    HashLin * hashTableArray[10];
+    HashLin* hashTableArray[10];
     
     
     /// @brief init() used to initialize all values in hashTableArray to nullptrs
@@ -35,7 +35,7 @@ class HashPerfect {
         - Determines number of strings that hash to each location
         - Dynamically allocates memory to each location
         - Inserts all of the strings into the secondary hash tables  */
-    void insertStringPerfect(string input);
+    void insertStringPerfect(vector<string> strings);
     
     
     /// @brief Print method to output perfect hash

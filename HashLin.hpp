@@ -15,7 +15,9 @@ class HashLin {
 
 
     ////// Private Functions ///////
+    
     ////Initialization///
+    /// Initializes empty vector to size specified by constructor ///
     void init();
 
     ///// Linear Hashing Function ///// 
@@ -24,7 +26,9 @@ class HashLin {
     /// @brief Is Prime?
     /// @param n
     /// @return True or False for "is n prime?"
-    bool isPrime(int n);
+    //bool isPrime(int n);
+
+    
 
 
 
@@ -40,11 +44,18 @@ class HashLin {
    
     //// PRINT ////
     void print();
+
+    /// @brief prints with indent for HashPerfect
+    void printIndent();
     
     /// @brief Next prime
     /// @param n 
     /// @return Closest larger prime
-    int nextPrime(int n);
+    //int nextPrime(int n);
+
+    /// @brief Getter for array size
+    /// @return hashTableSize
+    int getSize();
 
     
 };

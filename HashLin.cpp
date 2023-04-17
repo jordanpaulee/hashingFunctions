@@ -39,6 +39,7 @@ int HashLin::linHash(string hashTarget) {
 
 
 //// Prime Checker
+/*
 bool HashLin::isPrime(int n){
     if (n <= 1) return false;
     if (n <= 3) return true;
@@ -50,9 +51,7 @@ bool HashLin::isPrime(int n){
         return false;
 
     return true;
-};
-
-
+}*/
 
 
 ///////PUBLIC////////
@@ -62,11 +61,11 @@ HashLin::HashLin(int size) {
     cout << endl << "/////////CONSTRUCTOR///////////" << endl;
     cout << "1: Constructor Call" << endl;
     
-    int newSize = nextPrime(size);
-    cout << "Next Prime: " << newSize << endl;
+    //int newSize = nextPrime(size); //Do this BEFORE, helps with HashPerfect
+    //cout << "Next Prime: " << newSize << endl;
     
-    this -> hashTableSize = newSize;
-    cout << "3: CHECK. New Size: " << newSize << " | Hash Table Size: " << this -> hashTableSize << endl;
+    this -> hashTableSize = size;
+    cout << "3: CHECK. New Size: " << size << " | Hash Table Size: " << this -> hashTableSize << endl;
    
     init();
     cout << endl << endl;
@@ -84,16 +83,11 @@ void HashLin::insertString(string input){
     if (itemsInHashTable == hashTableSize){
         
         cout << endl << "//////RESIZE////////" << endl;
-        //int tempSize = nextPrime(hashTableSize); //Not hitting 3. Redundant?
         
         HashLin newTable(hashTableSize);
 
         cout << "Hashing old values into new table" << endl;
-        for (int i = 0; i < hashTableSize; i++){ //POSSIBLE ISSUE #1
-            /*
-            Check doesn't completely match out9.txt because "brown" is read from previous hash table before "the"
-            - Ask prof.
-            */
+        for (int i = 0; i < hashTableSize; i++){ 
 
             if (this->hashTable[i]!= ""){
                 newTable.insertString(this -> hashTable[i]);
@@ -145,8 +139,16 @@ void HashLin::print(){
     }
 };
 
+// Print Indent
+void HashLin::printIndent(){
+    for (int i = 0; i < hashTableSize; i++) {
+        cout << "       " << i << ": " << hashTable[i] << endl;
+    }
+};
+
 
 //// Next Prime
+/*
 int HashLin::nextPrime(int n) {
     cout << "2: Next Prime Call" << endl;
     
@@ -164,4 +166,8 @@ int HashLin::nextPrime(int n) {
         }
     }
     return n;
-}
+}*/
+
+    int HashLin::getSize()  {
+        return hashTableSize;
+    }
