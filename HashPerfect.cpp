@@ -6,8 +6,8 @@
 
 using namespace std;
 
-//TODO: Documentation
 
+// INITIALIZATION
 void HashPerfect::init() {
     for (int i = 0; i < 10; i++) {
         hashTableArray[i] = nullptr;
@@ -15,6 +15,7 @@ void HashPerfect::init() {
 }
 
 
+// HASHING METHOD
 int HashPerfect::perfectHash(string hashTarget) {
     unsigned long hash = 0;
 
@@ -25,6 +26,9 @@ int HashPerfect::perfectHash(string hashTarget) {
     return hash;
 }
 
+
+// INSERTION METHOD FOR LINEAR HASH SUB TABLES
+    // Used to build the hash linear tables pointed to by the hash perfect table
 void HashPerfect::insertIn(int n, vector<string> strings){
     int size = strings.size();
     int newSize = size*size;
@@ -33,41 +37,20 @@ void HashPerfect::insertIn(int n, vector<string> strings){
     
     for(int i = 0; i < size; i++){
         temp = strings[i];
-        //cout <<"Size: " << size << " TEMP: " << temp << endl;
         hashTableArray[n]->insertString(temp);
     }
-    /*
-        if(hashTableArray[n] == nullptr) { //Insert initial string
-            
-
-            hashTableArray[n] = new HashLin(size);
-            hashTableArray[n]->insertString(strings[i]);
-            
-        }
-
-        else { //DOUBLE SIZE AND REHASH!!!
-            
-            int temp = (hashTableArray[n]->getItemsIn())+1;
-            
-            int newSize = temp*temp;
-            
-            
-            hashTableArray[n]->resizePerfect(newSize);
-
-            hashTableArray[n]->insertString(strings[i]);
-
-        }*/
-        //cout << "Done" << endl;
-    //return tempHashLin;
 }
 
+
+// CONSTRUCTOR
 HashPerfect::HashPerfect() {
     init();
 }
 
 
+// INSERTION METHOD FOR HASH PERFECT
 void HashPerfect::insertStringPerfect(vector<string> strings) {
-    //cout << strings.size() << endl;
+    //Temp vectors used for ordering values hashed to 0-9 index in hashPerfect table
     vector<string> one;
     vector<string> two;
     vector<string> three;
@@ -79,50 +62,22 @@ void HashPerfect::insertStringPerfect(vector<string> strings) {
     vector<string> nine;
     vector<string> ten;
 
+    //Filler methods
     for(int i = 0; i < strings.size(); i++) {
         int index = perfectHash(strings[i]);
         
-        /*
-        if(hashTableArray[index] == nullptr) { //Insert initial string
-            
-
-            hashTableArray[index] = new HashLin(1);
-            hashTableArray[index]->insertString(strings[i]);
-            
-        }
-
-        else { //DOUBLE SIZE AND REHASH!!!
-            
-            
-            int temp = (hashTableArray[index]->getItemsIn())+1;
-            
-            int newSize = temp*temp;
-            
-            
-            hashTableArray[index]->resizePerfect(newSize);
-
-            hashTableArray[index]->insertString(strings[i]);
-        }*/
-        //Below is my failed attempt at storing the values in each
-        //index and THEN hashing them into the
-       
         switch(index) {
             case 0:
-                //cout << "Works 1" << endl;
                 one.push_back(strings[i]);
-                //cout <<"1 SIZE: "<< one.size() << endl;
                 break;
             case 1:
                 two.push_back(strings[i]);
-                //cout <<"2 SIZE: "<< two.size() << endl;
                 break;
             case 2:
                 three.push_back(strings[i]);
-                //cout <<"3 SIZE: "<< three.size() << endl;
                 break;
             case 3:
                 four.push_back(strings[i]);
-                //cout <<"4 SIZE: "<< four.size() << endl;
                 break;
             case 4:
                 five.push_back(strings[i]);
@@ -145,7 +100,7 @@ void HashPerfect::insertStringPerfect(vector<string> strings) {
         }
     }
     
-    
+    // Loops through each vector to hash and insert each item into the hashLinear table pointed to at each index
     for(int j = 0; j < 10; j++){
         switch(j) {
             case 0: {
@@ -197,14 +152,13 @@ void HashPerfect::insertStringPerfect(vector<string> strings) {
                 this->insertIn(j, ten);
             }
             break;
-    
         }
     }
 }
 
-//TODO Implement
+
+// PRINT METHOD
 void HashPerfect::printPerfect() {
-    //cout << "//////// PRINTING ////////////" << endl;
     for (int i = 0 ; i < 10; i++) {
         cout << i << ": -->" << endl;
         hashTableArray[i]->printIndent();

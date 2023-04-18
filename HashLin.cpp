@@ -9,20 +9,13 @@ using namespace std;
 
 //// Initialization
 void HashLin::init() {
-     //cout << "4: init() called" << endl;
+
     this->itemsInHashTable = 0;
-
-    //cout << "5: Items in hash table: " << this->itemsInHashTable << endl;
     
+    //initializes every value in the hash table to empty
     for(int i=0; i<hashTableSize; i++){
-        //cout << "6: Loop Count: " << i << endl;
-        //cout << "7: Hash Table Size: " << hashTableSize << endl;
-        
         hashTable.vector::insert(hashTable.begin()+i ,"");
-        //cout << "Test: " << hashTable[i] << endl;
     }
-
-    //cout << "8: End init()" << endl;
 }
 
 
@@ -30,6 +23,7 @@ void HashLin::init() {
 int HashLin::linHash(string hashTarget) {
     unsigned long hash = 0;
 
+    // hashing calculation
     for (int i = 0; i < hashTarget.length(); i++) {
         unsigned char w = hashTarget[i];
         hash = (37 * hash + w) % hashTableSize;
@@ -39,7 +33,7 @@ int HashLin::linHash(string hashTarget) {
 
 
 //// Prime Checker
-
+    //Checks if integer n is prime or not (Used for calculating size for constructor)
 bool HashLin::isPrime(int n){
     if (n <= 1) return false;
     if (n <= 3) return true;
@@ -58,80 +52,45 @@ bool HashLin::isPrime(int n){
 
 //// Constructor
 HashLin::HashLin(int size) {
-    //cout << endl << "/////////CONSTRUCTOR///////////" << endl;
-    //cout << "1: Constructor Call" << endl;
-    
-    //int newSize = nextPrime(size); //Do this BEFORE, helps with HashPerfect
-    //cout << "Next Prime: " << newSize << endl;
-    
     this -> hashTableSize = size;
-    //cout << "3: CHECK. New Size: " << size << " | Hash Table Size: " << this -> hashTableSize << endl;
-   
     init();
-    //cout << endl << endl;
 };
 
 
 ///// Insertion Method
 void HashLin::insertString(string input){ 
-    /*
-    cout << "/////////STRING INSERT/////////" << endl;
-    cout << "Item to insert: " << input << endl;
-    cout << "Items in hash table: " << itemsInHashTable << endl;
-    cout << "Hash Table Size: " << hashTableSize << endl;
-    */
-
-    // Check if resize is needed
+    //Dynamic Resizing. Shouldn't be used in current implementation, but code can be refactored to utilize this.
     if (itemsInHashTable == hashTableSize){
-        
-        cout << endl << "//////WRONG RESIZE////////" << endl;
         
         int newSize = nextPrime(hashTableSize);
         HashLin newTable(newSize);
 
-        //cout << "Hashing old values into new table" << endl;
         for (int i = 0; i < hashTableSize; i++){ 
 
             if (this->hashTable[i]!= ""){
                 newTable.insertString(this -> hashTable[i]);
                 }
             }
-            
-        //ALTERNATE REHASHING
 
-
-        //cout << "Finished rehashing old values into new table, reassigning old table pointers to new" << endl;
-        
         this->hashTable = newTable.hashTable;
         this->hashTableSize = newTable.hashTableSize;
         this->itemsInHashTable = newTable.itemsInHashTable;
-        //cout << endl << endl;
-        //Continue to insert new value
         }
-    
-    // Otherwise, hash and insert with linear probing
+
     int hashValue = linHash(input);
 
-    //cout << "Hash Value: "<< hashValue << endl;
-    //cout << "Value: " << hashTable[hashValue] << endl;
-
+    //Linear Probing Condition (If value in index is not empty, move to next.)
     if (hashTable[hashValue] != ""){
-        //cout << "Linear probing condition called" << endl;
         
         while(hashTable[hashValue] != ""){
             hashValue++;
-            
             hashValue = hashValue % hashTableSize;
-           
-            //cout << "New hash value: " << hashValue << endl;
-            
-        } //SHOULD PROVIDE VALID hashValue if this terminates
+        }
     }
-
+    
+    //Sets index to input value and iterates items in table.
     hashTable[hashValue] = input;
     itemsInHashTable++;
-    //cout << "Hash Index: " << hashValue << "  Value: " << hashTable[hashValue] << endl;
-    //cout << endl << endl;
 };
 
 
@@ -142,7 +101,9 @@ void HashLin::print(){
     }
 };
 
+
 // Print Indent
+    //Print indent prints the hash linear table for use in hash perfect print.
 void HashLin::printIndent(){
     if (this != nullptr) {
         for (int i = 0; i < hashTableSize; i++) {
@@ -153,9 +114,8 @@ void HashLin::printIndent(){
 
 
 //// Next Prime
-
+    //Used to find the next prime for size in constructor
 int HashLin::nextPrime(int n) {
-    //cout << "2: Next Prime Call" << endl;
     
     if (n <= 1)
     return 2;
@@ -173,26 +133,31 @@ int HashLin::nextPrime(int n) {
     return n;
 }
 
-    int HashLin::getSize()  {
-        return hashTableSize;
-    }
 
-    int HashLin::getItemsIn(){
-        return itemsInHashTable;
-    }
+//Getter for size
+int HashLin::getSize()  {
+    return hashTableSize;
+}
 
-    void HashLin::resizePerfect(int n){
-        HashLin newTable(n);
 
-        //cout << "Hashing old values into new table" << endl;
-        for (int i = 0; i < hashTableSize; i++){ 
+//Getter for items in hash table
+int HashLin::getItemsIn(){
+    return itemsInHashTable;
+}
 
-            if (this->hashTable[i]!= ""){
-                newTable.insertString(this -> hashTable[i]);
-                }
+
+//Likely unused. Dynamic resizing not utilized in this project
+void HashLin::resizePerfect(int n){
+    HashLin newTable(n);
+
+    for (int i = 0; i < hashTableSize; i++){ 
+
+        if (this->hashTable[i]!= ""){
+            newTable.insertString(this -> hashTable[i]);
             }
+        }
 
-        this->hashTable = newTable.hashTable;
-        this->hashTableSize = newTable.hashTableSize;
-        this->itemsInHashTable = newTable.itemsInHashTable;
-    }
+    this->hashTable = newTable.hashTable;
+    this->hashTableSize = newTable.hashTableSize;
+    this->itemsInHashTable = newTable.itemsInHashTable;
+}

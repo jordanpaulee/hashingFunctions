@@ -15,13 +15,16 @@ class HashLin {
 
 
     ////// Private Functions ///////
-    
-    ////Initialization///
-    /// Initializes empty vector to size specified by constructor ///
+
+    /// @brief Initializes empty vector to size specified by constructor
     void init();
 
-    ///// Linear Hashing Function ///// 
+
+    /// @brief Method to calculate hash value of input string
+    /// @param hashTarget is the string for hashing
+    /// @return hash value for indexing
     int linHash(string hashTarget);
+
 
     /// @brief Is Prime?
     /// @param n
@@ -30,19 +33,17 @@ class HashLin {
 
     
 
-
-
     public:
-    ///// PUBLIC FUNCTIONS //////
-    /// @Constructor ////
-    /// @param size /////
+    
+    /// @brief Constructor
+    /// @param size parameter must be fed prime number for hashLin and n^2 for hashPerfect
     HashLin(int size);
 
-    ///// INSERT /////
-    //Takes input string and handles resizing and hashing of input value into linear hash table
+    /// @brief Takes input string and handles hashing of input value into linear hash table (Does support dynamic resizing)
+    /// @param input is the string to be input
     void insertString(string input);
    
-    //// PRINT ////
+    /// @brief Print method
     void print();
 
     /// @brief prints with indent for HashPerfect
