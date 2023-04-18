@@ -23,7 +23,6 @@ bool isPrime(int n){
 }
 
 int nextPrime(int n) {
-    //cout << "2: Next Prime Call" << endl;
     
     if (n <= 1)
     return 2;
@@ -40,42 +39,87 @@ int nextPrime(int n) {
     }
     return n;
 }
-
+///////////// 
+/*
 string testArray9[9] = {"the", "quick", "brown", "fox", "jumped", "over", "a", "lazy", "dog"};
 string testArray10[10] = {"hello", "street", "leaves", "fall", "Thanksgiving", "candy", "pumpkin", "pie", "Halloween", "fun"};
+vector<string> testVector9;
 vector<string> testVector10;
 
-int stringSize = sizeof(testArray10)/sizeof(testArray10[0]);
+
+int stringSize = sizeof(testArray9)/sizeof(testArray9[0]);
 int newSize = nextPrime(stringSize);
 
 HashLin test(newSize);
 HashPerfect testPerfect;
+*/ 
+///////////
+
 
 int main() {
 
-    cout << sizeof(testArray10) << endl;
-    cout << sizeof(testArray10[0]) << endl;
+    /*
+    cout << sizeof(testArray9) << endl;
+    cout << sizeof(testArray9[0]) << endl;
     cout << stringSize << endl;
-    
+    */
+
+   /*******************************
     // FILL VECTOR 
-    for (int k = 0; k < 10; k++){
-        testVector10.push_back(testArray10[k]);
+    for (int k = 0; k < stringSize; k++){
+        testVector9.push_back(testArray9[k]);
     }
     
     //FILL HASH LIN ARRAY
     for (int i = 0; i < stringSize; i++){
-        test.insertString(testArray10[i]);
+        test.insertString(testArray9[i]);
     }
     //PRINT HASHLIN
+    cout << "Hash Table with Linear Probing (size = " << newSize << "): " << endl << endl;
     test.print();
     cout << endl << endl;
     
     //FILL HASHPERFECT
-    testPerfect.insertStringPerfect(testVector10);
-    
-    //PRINT HASHPERFECT
-    testPerfect.printPerfect();
+    testPerfect.insertStringPerfect(testVector9);
 
+    //PRINT HASHPERFECT
+    cout << "Perfect Hash Table: " << endl << endl;
+    testPerfect.printPerfect();
+    *********************/
+   
+    vector<string> tempVector;
+    string temp;
+
+    do{
+        cin >> temp;
+        if(temp != "!"){
+            tempVector.push_back(temp);
+        }
+    } while(temp != "!");
+    
+    int vectorSize = tempVector.size();
+
+    int primedSize = nextPrime(vectorSize);
+    HashLin hashLin(primedSize);
+
+    //FILL HASH LIN ARRAY
+    for (int i = 0; i < vectorSize; i++){
+        hashLin.insertString(tempVector[i]);
+    }
+    //PRINT HASHLIN
+    cout << "Hash Table with Linear Probing (size = " << primedSize << "): " << endl << endl;
+    hashLin.print();
+    cout << endl << endl;
+
+
+    HashPerfect hashPerfect;
+    
+    //FILL HASHPERFECT
+    hashPerfect.insertStringPerfect(tempVector);
+
+    //PRINT HASHPERFECT
+    cout << "Perfect Hash Table: " << endl << endl;
+    hashPerfect.printPerfect();
 }
 
 

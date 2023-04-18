@@ -23,6 +23,9 @@ class HashPerfect {
     /// @return Hash value for given string
     int perfectHash(string hashTarget);
 
+    /// @brief To insert hashLin into hashPerfect correctly
+    void insertIn(int n, vector<string> strings);
+
 
     public:
 

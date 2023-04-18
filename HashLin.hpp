@@ -57,6 +57,10 @@ class HashLin {
     /// @return hashTableSize
     int getSize();
 
+    /// @brief Returns number of items for quadratic growth in perfect hashing
+    /// @return # of items
+    int getItemsIn();
+
     /// @brief for resizing hashlin objects for perfect hashing
     /// @param n for resize int
     void resizePerfect(int n);
